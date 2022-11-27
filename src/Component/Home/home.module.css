@@ -1,0 +1,27 @@
+ :root{
+    --mainColor:#AAAAAA;
+    --secondryColor:#49ACFF
+ }
+.Home{
+    background-image: url('../../images/paladins.b44d33d6e7ee1ba8.png');
+    background-size: 100% 100%;
+    background-position: center center;
+}
+.item h1{
+color: var(--mainColor);
+}
+.item span{
+    color:var(--secondryColor) ;
+}
+figcaption h6{
+    color: #AAAAAA;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.item2{
+    transition: 0.5s all;
+}
+.item2:hover{
+    transform: scale(1.05);
+}

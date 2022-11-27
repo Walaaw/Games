@@ -1,0 +1,9 @@
+h2 ,p,span{
+    color: #AAAAAA;
+}
+.item p:nth-child(1){
+    color: #6C757D;
+}
+.item p:nth-child(2){
+    color: #AAAAAA;
+}

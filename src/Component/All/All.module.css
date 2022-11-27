@@ -1,0 +1,22 @@
+
+figcaption{
+    background-color: #32383E;
+}
+.desc{
+    color: #AAAAAA;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.item{
+    transition: all 0.5s;
+   
+}
+.item:hover{
+ transform: scale(1.05);
+}
+.free{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
