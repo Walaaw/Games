@@ -101,7 +101,8 @@ export default function Register() {
                     <div class="col-md-12 mt-3">
                       <input onChange={getuser} type="password" class="form-control bg-dark text-white" placeholder="Password" name="password"
                       />
-                       {getSpicifcError("password")?<div className="alert alert-danger m-2 "> {getSpicifcError("password")}</div>:''}
+                       {getSpicifcError("password")?<div className="alert alert-danger m-2 "> 
+                       password required and must be 8 character minmum</div>:''}
                     </div>
                     <div className="col-md-12 mt-3">
                     <button className="btn p-2 w-100 "> Creat Acount</button>

@@ -11,6 +11,7 @@ import jwtDecode from 'jwt-decode';
 import GamePlatform from './Component/GamePlateform/GamePlatform';
 import GameCategory from './Component/GameCategory/GameCategory';
 import GameSortby from './Component/GameSortby/GameSortby';
+import NotFound from './Component/NotFound/NotFound';
 function App() {
   const [logedUser, setlogedUser] = useState(null);
   function getLoggeduser() {
@@ -31,7 +32,7 @@ function App() {
   }
   useEffect(function(){
     checkReload();
-  },[])
+  },[logedUser])
   function ProtectedRoute(props){
     if(logedUser===null){
        return <Login/>
@@ -45,6 +46,7 @@ function App() {
   console.log(logedUser);
 
   const router= createHashRouter([{path:"" ,element:<Main logedUser={logedUser}  removeUser={removeUser}/> ,children:[
+    {path:"",element:<Home/>},
     {path:"home",element:<ProtectedRoute> <Home/> </ProtectedRoute>   },
     {path:"all",element:<ProtectedRoute> <All/> </ProtectedRoute>  },
     {path:"details",element: <ProtectedRoute><GameDetails/></ProtectedRoute>,children:[{path:':id'}]},
@@ -52,7 +54,8 @@ function App() {
     {path:"category",element:<ProtectedRoute><GameCategory/></ProtectedRoute> ,children:[{path:':cat'}]},
     {path:'sortby',element: <ProtectedRoute><GameSortby/></ProtectedRoute> ,children:[{path:':sort'}]},
     {path:"login",element:<Login getLoggeduser={getLoggeduser}/>},
-    {path:'register',element:<Register/>}
+    {path:'register',element:<Register/>},
+    {path:'*',element:<NotFound/>}
   ]}])
   return (
    <>
