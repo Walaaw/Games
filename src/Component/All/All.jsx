@@ -55,7 +55,7 @@ useEffect(() => {
     <i class="fa-solid fa-diamond fa-bounce fa-3x text-success me-2"></i>
     </div>}
     </div>
-    <button onClick={getMoreGames} className=' btn btn-outline-secondary d-block m-auto'> more games</button>
+    <button onClick={getMoreGames} className=' btn btn-outline-secondary d-block m-auto my-3'> more games</button>
    </div>
   
    </>

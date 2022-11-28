@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Main from './Component/Main/Main';
 import Login from './Component/Login/Login';
 import Register from './Component/Register/Register';
@@ -44,18 +44,16 @@ function App() {
   }
   console.log(logedUser);
 
-  const router= createBrowserRouter([{path:"" ,element:<Main logedUser={logedUser}  removeUser={removeUser}/> ,children:[
+  const router= createHashRouter([{path:"" ,element:<Main logedUser={logedUser}  removeUser={removeUser}/> ,children:[
     {path:"home",element:<ProtectedRoute> <Home/> </ProtectedRoute>   },
     {path:"all",element:<ProtectedRoute> <All/> </ProtectedRoute>  },
-    {path:"details",element:<GameDetails/>,children:[{path:':id'}]},
-    {path:"plateform",element:<GamePlatform/>,children:[{path:':plateform'}]},
-    {path:"category",element:<GameCategory/>,children:[{path:':cat'}]},
-    {path:'sortby',element: <GameSortby/>,children:[{path:':sort'}]},
+    {path:"details",element: <ProtectedRoute><GameDetails/></ProtectedRoute>,children:[{path:':id'}]},
+    {path:"plateform",element: <ProtectedRoute> <GamePlatform/></ProtectedRoute>,children:[{path:':plateform'}]},
+    {path:"category",element:<ProtectedRoute><GameCategory/></ProtectedRoute> ,children:[{path:':cat'}]},
+    {path:'sortby',element: <ProtectedRoute><GameSortby/></ProtectedRoute> ,children:[{path:':sort'}]},
     {path:"login",element:<Login getLoggeduser={getLoggeduser}/>},
     {path:'register',element:<Register/>}
   ]}])
-
-
   return (
    <>
    <React.StrictMode>
