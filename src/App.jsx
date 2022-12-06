@@ -32,7 +32,7 @@ function App() {
   }
   useEffect(function(){
     checkReload();
-  },[logedUser])
+  },[])
   function ProtectedRoute(props){
     if(logedUser===null){
        return <Login/>
@@ -47,8 +47,8 @@ function App() {
 
   const router= createHashRouter([{path:"" ,element:<Main logedUser={logedUser}  removeUser={removeUser}/> ,children:[
     {path:"",element:<Home/>},
-    {path:"home",element:<ProtectedRoute> <Home/> </ProtectedRoute>   },
-    {path:"all",element:<ProtectedRoute> <All/> </ProtectedRoute>  },
+    {path:"home",element: <ProtectedRoute><Home/></ProtectedRoute> },
+    {path:"all",element:<ProtectedRoute><All/></ProtectedRoute> },
     {path:"details",element: <ProtectedRoute><GameDetails/></ProtectedRoute>,children:[{path:':id'}]},
     {path:"plateform",element: <ProtectedRoute> <GamePlatform/></ProtectedRoute>,children:[{path:':plateform'}]},
     {path:"category",element:<ProtectedRoute><GameCategory/></ProtectedRoute> ,children:[{path:':cat'}]},

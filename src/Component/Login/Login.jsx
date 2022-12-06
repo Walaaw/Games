@@ -38,7 +38,7 @@ export default function Login({getLoggeduser}) {
         console.log(user);
     }
     async function callapi(){
-      let {data}= await axios.post(" https://route-egypt-api.herokuapp.com/signin",user);
+      let {data}= await axios.post("https://sticky-note-fe.vercel.app/signin",user);
       console.log(data.message);
       if(data.message==="success"){
         localStorage.setItem('token',data.token);
