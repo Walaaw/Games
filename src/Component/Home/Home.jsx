@@ -37,7 +37,7 @@ useEffect(() => {
    <h2>Personalized Recommendations:</h2>
   </div>
     <div className="row mt-5">
-     {games?games.slice(10,13).map((game)=> <div className="col-md-4">
+     {games?games.slice(11,14).map((game)=> <div className="col-md-4">
       <div >
         <figure>
         <Link to={`/details/${game.id}`}>
