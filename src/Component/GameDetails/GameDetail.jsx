@@ -61,7 +61,7 @@ export default function GameDetail() {
                        
                         <h2>Overwatch 2 Screenshots</h2>
                       
-                      {details.screenshots>0?
+                      {details.screenshots.length>0?
                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                        <div className="carousel-inner">
                            <div className="carousel-item active">

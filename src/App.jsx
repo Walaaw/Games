@@ -15,17 +15,19 @@ import NotFound from './Component/NotFound/NotFound';
 function App() {
   const [logedUser, setlogedUser] = useState(null);
   function getLoggeduser() {
-
-    let incodededData=localStorage.getItem('token')
-    let docodedData=jwtDecode(incodededData);
-    setlogedUser(docodedData);
+    if(localStorage.getItem('token')!=null){
+      let incodededData=localStorage.getItem('token')
+      let docodedData=jwtDecode(incodededData);
+      setlogedUser(docodedData);
+    }
+   
   }
   function removeUser() {
     localStorage.removeItem('token');
     setlogedUser(null);
   }
   function checkReload() {
-    if(localStorage.getItem('token')!=null &&logedUser==null)
+    if(localStorage.getItem('token')!=null && logedUser==null)
     {
       getLoggeduser();
     }
@@ -38,9 +40,8 @@ function App() {
        return <Login/>
     }
     else{
-      return <>
-       {props.children}
-      </>
+      return <>{props.children}</>
+      
     }
   }
   console.log(logedUser);
