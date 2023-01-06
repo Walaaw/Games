@@ -37,7 +37,7 @@ function App() {
   },[])
   function ProtectedRoute(props){
     if(logedUser===null){
-       return <Login/>
+       return <Login getLoggeduser={getLoggeduser}/>
     }
     else{
       return <>{props.children}</>

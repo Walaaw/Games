@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import register from "../../images/gaming.ebaf2ffc84f4451d.jpg";
 import { useState } from "react";
 import Joi, { number } from "joi";
